@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sheraz Khan | OS Resume</title>
+    <link rel="icon" type="image/png" href="Favicon.png">
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome for OS Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,8 +15,6 @@
         <div id="top-bar">
             <div class="top-bar-left">
                 <span class="os-logo"><i class="fa-solid fa-terminal"></i> SK-OS v10.4</span>
-                <span class="menu-item" onclick="openWindow('about-window')">File</span>
-                <span class="menu-item" onclick="openWindow('skills-window')">View</span>
                 <span class="menu-item" onclick="openWindow('terminal-window')">Terminal</span>
             </div>
             <div class="top-bar-right">
@@ -29,30 +28,54 @@
         <div id="desktop-grid">
             <div class="desktop-icon" ondblclick="openWindow('about-window')">
                 <i class="fa-solid fa-user-tie folder-icon"></i>
-                <span>About_Me.exe</span>
+                <span>About Me</span>
             </div>
             <div class="desktop-icon" ondblclick="openWindow('experience-window')">
                 <i class="fa-solid fa-briefcase folder-icon"></i>
-                <span>Experience.log</span>
+                <span>Work Experience</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('skills-window')">
+            <div class="desktop-icon" ondblclick="openWindow('education-window')">
+                <i class="fa-solid fa-graduation-cap folder-icon"></i>
+                <span>Education</span>
+            </div>
+            <div class="desktop-icon" ondblclick="openWindow('competencies-window')">
+                <i class="fa-solid fa-list-check folder-icon"></i>
+                <span>Core Competencies</span>
+            </div>
+            <div class="desktop-icon" ondblclick="openWindow('technical-window')">
                 <i class="fa-solid fa-microchip folder-icon"></i>
-                <span>Tech_Stack.sys</span>
+                <span>Technical Expertise</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('terminal-window')">
-                <i class="fa-solid fa-terminal folder-icon"></i>
-                <span>Terminal.sh</span>
+            <div class="desktop-icon" ondblclick="openWindow('volunteer-window')">
+                <i class="fa-solid fa-handshake-angle folder-icon"></i>
+                <span>Volunteer Experience</span>
+            </div>
+            <div class="desktop-icon" ondblclick="openWindow('certifications-window')">
+                <i class="fa-solid fa-certificate folder-icon"></i>
+                <span>Certifications</span>
+            </div>
+            <div class="desktop-icon" ondblclick="openWindow('honors-window')">
+                <i class="fa-solid fa-award folder-icon"></i>
+                <span>Honors and Recognition</span>
+            </div>
+            <div class="desktop-icon" ondblclick="openWindow('achievements-window')">
+                <i class="fa-solid fa-star folder-icon"></i>
+                <span>Career Achievements</span>
             </div>
             <div class="desktop-icon" ondblclick="openWindow('contact-window')">
                 <i class="fa-solid fa-address-book folder-icon"></i>
-                <span>Contact.cfg</span>
+                <span>Contact Details</span>
+            </div>
+            <div class="desktop-icon" ondblclick="openWindow('terminal-window')">
+                <i class="fa-solid fa-terminal folder-icon"></i>
+                <span>Terminal</span>
             </div>
         </div>
 
         <!-- WINDOW: About Me -->
         <div class="os-window" id="about-window" style="top: 80px; left: 100px;">
             <div class="window-header" onmousedown="dragWindow(event, 'about-window')">
-                <span class="window-title"><i class="fa-solid fa-user-tie"></i> About_Me.exe</span>
+                <span class="window-title"><i class="fa-solid fa-user-tie"></i> About Me</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('about-window')">_</span>
                     <span class="maximize" onclick="maximizeWindow('about-window')">&#x25A2;</span>
@@ -60,13 +83,23 @@
                 </div>
             </div>
             <div class="window-body">
-                <h2>Sheraz Khan</h2>
-                <p class="subtitle"><strong>IT Manager | Cybersecurity Specialist | Automation Expert</strong></p>
+                <div class="about-top-container">
+                    <img src="Profile Pic.png" alt="Sheraz Khan" class="profile-pic">
+                    <div>
+                        <h2>Sheraz Khan</h2>
+                        <p class="subtitle"><strong>IT Manager | Cybersecurity Specialist | Automation Expert</strong></p>
+                        <div class="action-buttons">
+                            <a href="https://www.youtube.com/watch?v=CgU2rm0C7Wk" target="_blank" class="os-btn youtube-btn"><i class="fa-brands fa-youtube"></i> Play Intro Video</a>
+                            <a href="https://drive.google.com/file/d/1M0hDS-hQnQnrM1lEsju8TZDdG3EB2vGH/view?usp=drive_link" target="_blank" class="os-btn resume-btn"><i class="fa-solid fa-file-pdf"></i> View Resume</a>
+                        </div>
+                    </div>
+                </div>
                 <hr>
-                <p>IT Manager, Cybersecurity Professional, and Digital Transformation Leader with 15+ years of experience managing enterprise IT infrastructure, cybersecurity operations, cloud environments, business applications, and automation initiatives. Expertise in Microsoft Azure, Microsoft 365, Entra ID, Intune, SharePoint, Power Platform, Dynamics 365, cybersecurity governance, Zero Trust architecture, identity and access management, compliance, and business process automation.</p>
-                <h3>Location & Contact</h3>
+                <p>IT Manager, Cybersecurity Professional, and Digital Transformation Leader with 15+ years of experience managing enterprise IT infrastructure, cybersecurity operations, cloud environments, business applications, and automation initiatives. Expertise in Microsoft Azure, Microsoft 365, Entra ID, Intune, SharePoint, Power Platform, Dynamics 365, cybersecurity governance, Zero Trust architecture, identity and access management, compliance, and business process automation. Proven success leading multi-site technology operations, reducing operational costs, strengthening security posture, and delivering enterprise-scale digital transformation projects.</p>
+                <h3>Location & Status</h3>
                 <ul>
                     <li><strong>Location:</strong> Paducah, KY 42001</li>
+                    <li><strong>Citizenship / Status:</strong> U.S. Citizen | Willing to Relocate</li>
                     <li><strong>Phone:</strong> (217) 904-2042</li>
                     <li><strong>Email:</strong> sherazkhanonline@outlook.com</li>
                     <li><strong>Website:</strong> <a href="https://www.sherazkhanonline.com" target="_blank">sherazkhanonline.com</a></li>
@@ -75,10 +108,10 @@
             </div>
         </div>
 
-        <!-- WINDOW: Experience -->
-        <div class="os-window" id="experience-window" style="top: 120px; left: 160px;">
+        <!-- WINDOW: Work Experience -->
+        <div class="os-window" id="experience-window" style="top: 100px; left: 140px;">
             <div class="window-header" onmousedown="dragWindow(event, 'experience-window')">
-                <span class="window-title"><i class="fa-solid fa-briefcase"></i> Experience.log</span>
+                <span class="window-title"><i class="fa-solid fa-briefcase"></i> Work Experience</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('experience-window')">_</span>
                     <span class="maximize" onclick="maximizeWindow('experience-window')">&#x25A2;</span>
@@ -88,51 +121,220 @@
             <div class="window-body">
                 <h3>IT Manager | Drake Lighting | Paducah, KY (2022–2026)</h3>
                 <ul>
-                    <li>Lead administration of Microsoft 365, Azure, SharePoint, Dynamics 365 Business Central, and identity management for Drake Enterprises and affiliates.</li>
+                    <li>Lead administration of Microsoft 365, Azure, SharePoint, Dynamics 365 Business Central, identity management, and enterprise communications platforms for Drake Enterprises, Drake Lighting, Drake Services, Drake Construction, and IoT USA.</li>
+                    <li>Design and develop business applications using Microsoft Power Apps, Power Automate, SharePoint, and custom integrations.</li>
+                    <li>Implement cybersecurity policies, governance frameworks, access controls, and compliance initiatives across the organization.</li>
+                    <li>Develop automation solutions that improve operational efficiency and reduce manual administrative effort across multiple departments.</li>
+                    <li>Manage, Train and Administer 7 corporate office and 3 field IT technicians.</li>
+                    <li>Build and maintain API integrations using Microsoft Graph, Postman, JSON, and custom workflow solutions.</li>
+                    <li>Administer network infrastructure, cloud-connected services, and enterprise technology systems for 145 users at the corporate office.</li>
+                    <li>Migrated the Vtiger CRM platform from hosted infrastructure to company-owned hosting with minimal business disruption.</li>
+                    <li>Designed and implemented a custom energy telemetry solution utilizing Shelly Pro 4PM devices, MQTT, mJS, ring-buffer aggregation, and persistent storage for real-time energy monitoring.</li>
                     <li>Automated 100+ internal and customer-facing reporting processes in Dynamics 365 Business Central using AL and Power Automate.</li>
-                    <li>Maintained zero reported cybersecurity breaches through implementation of Zero Trust principles and endpoint security best practices.</li>
+                    <li>Automated ticket creation within customer Salesforce environments, eliminating manual entry and accelerating issue response.</li>
+                    <li>Developed 20+ real-time shipping notification workflows using HTML, CSS, JavaScript, JSON, Figma, and Canva to improve communication with customers and sales teams.</li>
+                    <li>Designed and developed the Drake Expense Management application using Power Apps, SharePoint, and Power Fx, helping identify fraudulent expenses and strengthen financial controls.</li>
+                    <li>Designed and launched the Drake Parts online sales platform utilizing PHP, SQL, HTML, CSS, and JavaScript.</li>
+                    <li>Developed the Rapid Response Coverage application using Azure Maps, GeoJSON, SharePoint, Power Apps, and Power Fx, enabling real-time technician tracking throughout North America.</li>
+                    <li>Maintained zero reported cybersecurity breaches through implementation of Zero Trust principles, DKIM, endpoint detection and response controls, and network security best practices.</li>
                 </ul>
                 <hr>
                 <h3>IT Systems Manager | Native Grill and Wings | Chandler, AZ (2019–2022)</h3>
                 <ul>
-                    <li>Managed enterprise technology operations including 30+ cloud systems, communication platforms, and business applications for 300+ users.</li>
-                    <li>Replaced the company's managed service provider and assumed full responsibility for all IT operations, reducing annual costs by ~$80,000.</li>
+                    <li>Managed enterprise technology operations including 30+ cloud systems, communication platforms, websites, and business applications for 300+ users.</li>
+                    <li>Designed and administered SharePoint environments while automating business processes and organizational workflows.</li>
+                    <li>Supported and integrated restaurant technology platforms including POS, loyalty, online ordering, and business intelligence systems.</li>
+                    <li>Led technology training programs, infrastructure planning initiatives, and operational improvement projects for 300+ users and 12 IT team members.</li>
+                    <li>Provided technical leadership and strategic support for 35 franchise owners and 17 corporate stakeholders.</li>
+                    <li>Designed and developed a centralized corporate intranet and enterprise document repository using WordPress, custom plugins, JavaScript, and CSS.</li>
+                    <li>Consolidated 11 Restaurant365 (CTUIT) SQL databases and resolved more than 1,100 database errors within seven days.</li>
+                    <li>Replaced the company's managed service provider and assumed responsibility for all IT operations, reducing annual costs by approximately $80,000.</li>
+                    <li>Trained and supported 35 franchise owners and 41 restaurant teams across multiple locations.</li>
+                    <li>Developed and implemented cybersecurity policies, procedures, and Zero Trust security controls to improve organizational security posture.</li>
                 </ul>
                 <hr>
                 <h3>IT Systems Manager | TravelCenters of America | Bakersfield, CA (2012–2019)</h3>
                 <ul>
                     <li>Managed multi-location IT operations supporting enterprise technology environments and business-critical systems for 300 locations.</li>
+                    <li>Supervised technical staff and provided leadership for operational and technology initiatives for 20 corporate and field IT team members.</li>
+                    <li>Developed 20+ custom business applications, intranet solutions, and SharePoint-based systems.</li>
+                    <li>Directed recruiting, onboarding, employee development, and performance management activities for 10 west-region IT team members.</li>
+                    <li>Implemented security standards, technology modernization initiatives, and compliance programs.</li>
+                    <li>Developed enterprise training programs covering technology systems, workplace safety, and operational compliance.</li>
+                    <li>Designed and developed a centralized knowledge base and document management platform supporting corporate operations and more than 300 locations.</li>
+                    <li>Designed and developed a centralized help desk and ticketing platform utilizing HTML, CSS, JavaScript, and SQL technologies.</li>
+                    <li>Trained and supported users across more than 300 restaurant locations nationwide.</li>
+                    <li>Developed and implemented cybersecurity awareness training programs to strengthen organizational security culture and reduce human-related risk.</li>
+                </ul>
+                <hr>
+                <h3>IT Systems Specialist | Rosewood Sandhill | Menlo Park, CA (2009–2012)</h3>
+                <ul>
+                    <li>Provided enterprise technical support, systems administration, website management, and end-user support to 65 users.</li>
+                    <li>Developed and maintained 5 web applications and websites utilizing WordPress, HTML, and CSS.</li>
+                    <li>Assisted with technology deployment projects, infrastructure support, troubleshooting, and user training.</li>
+                    <li>Supported cybersecurity awareness initiatives and physical security technologies.</li>
+                    <li>Created technical documentation, user guides, and training materials for enterprise systems.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- WINDOW: Tech Stack / Skills -->
-        <div class="os-window" id="skills-window" style="top: 150px; left: 220px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'skills-window')">
-                <span class="window-title"><i class="fa-solid fa-microchip"></i> Tech_Stack.sys</span>
+        <!-- WINDOW: Education -->
+        <div class="os-window" id="education-window" style="top: 120px; left: 180px;">
+            <div class="window-header" onmousedown="dragWindow(event, 'education-window')">
+                <span class="window-title"><i class="fa-solid fa-graduation-cap"></i> Education</span>
                 <div class="window-controls">
-                    <span class="minimize" onclick="minimizeWindow('skills-window')">_</span>
-                    <span class="maximize" onclick="maximizeWindow('skills-window')">&#x25A2;</span>
-                    <span class="close" onclick="closeWindow('skills-window')">&times;</span>
+                    <span class="minimize" onclick="minimizeWindow('education-window')">_</span>
+                    <span class="maximize" onclick="maximizeWindow('education-window')">&#x25A2;</span>
+                    <span class="close" onclick="closeWindow('education-window')">&times;</span>
                 </div>
             </div>
             <div class="window-body">
-                <h3>Core Competencies</h3>
-                <p>IT Leadership | Cybersecurity | Cloud Architecture | Digital Transformation | Microsoft Azure | Microsoft 365 Administration | Power Platform | SharePoint | Identity & Access Management (IAM) | Incident Response | Risk Management</p>
-                <h3>Technical Expertise</h3>
+                <h3>Bachelor of Science | Information Technology (Information Assurance & Cybersecurity)</h3>
+                <p class="subtitle">Capella University | 2026</p>
+                <hr>
+                <h3>Associate of Science | Computer Information Systems</h3>
+                <p class="subtitle">Ashworth College | 2012</p>
+            </div>
+        </div>
+
+        <!-- WINDOW: Core Competencies -->
+        <div class="os-window" id="competencies-window" style="top: 140px; left: 220px;">
+            <div class="window-header" onmousedown="dragWindow(event, 'competencies-window')">
+                <span class="window-title"><i class="fa-solid fa-list-check"></i> Core Competencies</span>
+                <div class="window-controls">
+                    <span class="minimize" onclick="minimizeWindow('competencies-window')">_</span>
+                    <span class="maximize" onclick="maximizeWindow('competencies-window')">&#x25A2;</span>
+                    <span class="close" onclick="closeWindow('competencies-window')">&times;</span>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>IT Leadership | Cybersecurity | Cloud Architecture | Digital Transformation | Microsoft Azure | Microsoft 365 Administration | Enterprise Systems Administration | Business Process Automation | Power Platform | SharePoint | Identity & Access Management (IAM) | Network Infrastructure | Project Management | Team Leadership | Incident Response | Risk Management | API Development & Integrations | Software Development | Technical Training | Vendor Management | Strategic Planning</p>
+            </div>
+        </div>
+
+        <!-- WINDOW: Technical Expertise -->
+        <div class="os-window" id="technical-window" style="top: 160px; left: 260px;">
+            <div class="window-header" onmousedown="dragWindow(event, 'technical-window')">
+                <span class="window-title"><i class="fa-solid fa-microchip"></i> Technical Expertise</span>
+                <div class="window-controls">
+                    <span class="minimize" onclick="minimizeWindow('technical-window')">_</span>
+                    <span class="maximize" onclick="maximizeWindow('technical-window')">&#x25A2;</span>
+                    <span class="close" onclick="closeWindow('technical-window')">&times;</span>
+                </div>
+            </div>
+            <div class="window-body">
+                <h3>Cloud and Infrastructure</h3>
+                <p>Microsoft Azure Administration | AWS | Microsoft 365 | Microsoft Entra ID | Azure AD | Intune | Exchange Online | Citrix | Hyper-V | VMware | Windows Server | DNS | DHCP | VPN | WireGuard | Ubiquiti | SonicWall | Cloudflare | Cloud Security | Hybrid Cloud | SaaS Management</p>
+                <hr>
+                <h3>IT Management</h3>
+                <p>ITIL | ITSM | Service Delivery | Agile | Scrum | SDLC | Strategic Roadmaps | Budget Management | Asset Management | Change Management | Business Continuity | Disaster Recovery</p>
+                <hr>
+                <h3>Cybersecurity</h3>
+                <p>Microsoft Defender | Microsoft Sentinel | Microsoft Purview | ThreatLocker | Huntress | Zero Trust | Identity Governance | IAM | Endpoint Protection | Incident Response | Risk Assessment | Security Awareness Training | Vulnerability Management | Governance Risk and Compliance (GRC) | MFA | Conditional Access | DLP | PCI-DSS | HIPAA | Digital Forensics & Evidence Acquisition | Steganography & Analysis Tools | Reconnaissance & OSINT | Malware & Exploitation | Web Application & Database Security | Packet Capture & Traffic Analysis | Wireless Auditing | Social Engineering | Monitoring & Remote Management</p>
+                <hr>
+                <h3>Development and Automation</h3>
+                <p>C# | .NET | Python | SQL | JavaScript | HTML | CSS | Power Apps | Power Automate | Power Fx | AL | Microsoft Graph | REST APIs | JSON | Postman | SharePoint Development</p>
+                <hr>
+                <h3>Enterprise Platforms</h3>
+                <p>Dynamics 365 Business Central | Dynamics 365 F&O | SharePoint | Salesforce | Vtiger CRM | Restaurant365 | Olo | Punchh | Aloha POS | Toast POS | Google Workspace</p>
+                <hr>
+                <h3>Reporting and Analysis</h3>
+                <p>Power BI | SQL Server | Crystal Reports | Microsoft Visio | Documentation | Data Analysis | Black Box Intelligence</p>
+                <hr>
+                <h3>Unified Communications</h3>
+                <p>3CX | Zultys | Microsoft Teams | Zoom | RingCentral</p>
+            </div>
+        </div>
+
+        <!-- WINDOW: Volunteer Experience -->
+        <div class="os-window" id="volunteer-window" style="top: 180px; left: 300px;">
+            <div class="window-header" onmousedown="dragWindow(event, 'volunteer-window')">
+                <span class="window-title"><i class="fa-solid fa-handshake-angle"></i> Volunteer Experience</span>
+                <div class="window-controls">
+                    <span class="minimize" onclick="minimizeWindow('volunteer-window')">_</span>
+                    <span class="maximize" onclick="maximizeWindow('volunteer-window')">&#x25A2;</span>
+                    <span class="close" onclick="closeWindow('volunteer-window')">&times;</span>
+                </div>
+            </div>
+            <div class="window-body">
+                <h3>Volunteer Process Automation Consultant | The Salvation Army | Paducah, KY (2025–2026)</h3>
                 <ul>
-                    <li><strong>Cloud & Infrastructure:</strong> Azure Administration, AWS, Entra ID, Intune, Exchange, Citrix, Hyper-V, VMware, Windows Server, Cloudflare.</li>
-                    <li><strong>Cybersecurity:</strong> Microsoft Defender, Sentinel, Purview, ThreatLocker, Huntress, Zero Trust, GRC, MFA, Conditional Access, Digital Forensics.</li>
-                    <li><strong>Development & Automation:</strong> C#, .NET, Python, SQL, JavaScript, HTML, CSS, Power Apps, Power Automate, AL, Microsoft Graph, REST APIs.</li>
-                    <li><strong>Enterprise Platforms:</strong> Dynamics 365 Business Central & F&O, SharePoint, Salesforce, Restaurant365, Toast POS, Google Workspace.</li>
+                    <li>Digitized manual processes and automated organizational workflows, reducing administrative effort and improving operational efficiency.</li>
+                </ul>
+                <hr>
+                <h3>Volunteer IT and Digital Transformation Consultant | Merryman House | Paducah, KY (2024–2026)</h3>
+                <ul>
+                    <li>Designed and implemented databases, knowledge management solutions, and custom software applications to modernize operations and improve information accessibility.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- WINDOW: Certifications -->
+        <div class="os-window" id="certifications-window" style="top: 200px; left: 340px;">
+            <div class="window-header" onmousedown="dragWindow(event, 'certifications-window')">
+                <span class="window-title"><i class="fa-solid fa-certificate"></i> Certifications</span>
+                <div class="window-controls">
+                    <span class="minimize" onclick="minimizeWindow('certifications-window')">_</span>
+                    <span class="maximize" onclick="maximizeWindow('certifications-window')">&#x25A2;</span>
+                    <span class="close" onclick="closeWindow('certifications-window')">&times;</span>
+                </div>
+            </div>
+            <div class="window-body">
+                <h3>Cybersecurity Certification</h3>
+                <p class="subtitle">Cisco | 2025</p>
+                <hr>
+                <h3>Azure Identity and Governance Certification</h3>
+                <p class="subtitle">Microsoft | 2025</p>
+                <hr>
+                <h3>Security Awareness and Phishing Prevention Certification</h3>
+                <p class="subtitle">KnowBe4 | 2025</p>
+            </div>
+        </div>
+
+        <!-- WINDOW: Honors and Recognition -->
+        <div class="os-window" id="honors-window" style="top: 220px; left: 380px;">
+            <div class="window-header" onmousedown="dragWindow(event, 'honors-window')">
+                <span class="window-title"><i class="fa-solid fa-award"></i> Honors and Recognition</span>
+                <div class="window-controls">
+                    <span class="minimize" onclick="minimizeWindow('honors-window')">_</span>
+                    <span class="maximize" onclick="maximizeWindow('honors-window')">&#x25A2;</span>
+                    <span class="close" onclick="closeWindow('honors-window')">&times;</span>
+                </div>
+            </div>
+            <div class="window-body">
+                <h3>Kentucky Colonel</h3>
+                <p class="subtitle">Commonwealth of Kentucky's Highest Civilian Honor | 2026</p>
+                <hr>
+                <h3>Brand Ambassador Award</h3>
+                <p class="subtitle">Rosewood Sand Hill | 2010</p>
+            </div>
+        </div>
+
+        <!-- WINDOW: Career Achievements -->
+        <div class="os-window" id="achievements-window" style="top: 240px; left: 420px;">
+            <div class="window-header" onmousedown="dragWindow(event, 'achievements-window')">
+                <span class="window-title"><i class="fa-solid fa-star"></i> Career Achievements</span>
+                <div class="window-controls">
+                    <span class="minimize" onclick="minimizeWindow('achievements-window')">_</span>
+                    <span class="maximize" onclick="maximizeWindow('achievements-window')">&#x25A2;</span>
+                    <span class="close" onclick="closeWindow('achievements-window')">&times;</span>
+                </div>
+            </div>
+            <div class="window-body">
+                <ul>
+                    <li>Maintained zero reported cybersecurity breaches through implementation of Zero Trust principles, endpoint protection, secure email controls, and proactive security management.</li>
+                    <li>Reduced IT operating expenses by approximately $80,000 annually by replacing a managed service provider and assuming full ownership of IT operations and support functions.</li>
+                    <li>Developed business applications and automation solutions that streamlined operations, reduced manual effort, improved reporting capabilities, and increased organizational efficiency.</li>
+                    <li>Supported and trained technology users across multi-location organizations, including environments exceeding 300 operational sites.</li>
+                    <li>Led successful enterprise data consolidation, infrastructure modernization, cloud transformation, and cybersecurity initiatives across multiple industries.</li>
                 </ul>
             </div>
         </div>
 
         <!-- WINDOW: Terminal -->
-        <div class="os-window" id="terminal-window" style="top: 180px; left: 280px;">
+        <div class="os-window" id="terminal-window" style="top: 260px; left: 460px;">
             <div class="window-header" onmousedown="dragWindow(event, 'terminal-window')">
-                <span class="window-title"><i class="fa-solid fa-terminal"></i> Terminal.sh</span>
+                <span class="window-title"><i class="fa-solid fa-terminal"></i> Terminal</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('terminal-window')">_</span>
                     <span class="maximize" onclick="maximizeWindow('terminal-window')">&#x25A2;</span>
@@ -151,10 +353,10 @@
             </div>
         </div>
 
-        <!-- WINDOW: Contact -->
-        <div class="os-window" id="contact-window" style="top: 210px; left: 340px;">
+        <!-- WINDOW: Contact Details -->
+        <div class="os-window" id="contact-window" style="top: 280px; left: 500px;">
             <div class="window-header" onmousedown="dragWindow(event, 'contact-window')">
-                <span class="window-title"><i class="fa-solid fa-address-book"></i> Contact.cfg</span>
+                <span class="window-title"><i class="fa-solid fa-address-book"></i> Contact Details</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('contact-window')">_</span>
                     <span class="maximize" onclick="maximizeWindow('contact-window')">&#x25A2;</span>
@@ -186,7 +388,7 @@
         <!-- Start Menu Popup -->
         <div id="start-menu" class="hidden">
             <div class="start-header">
-                <i class="fa-solid fa-circle-user" style="font-size: 32px;"></i>
+                <img src="Profile Pic.png" alt="Sheraz Khan" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">
                 <div>
                     <strong>Sheraz Khan</strong><br>
                     <small>sherazkhanonline@outlook.com</small>
@@ -197,16 +399,34 @@
                 <i class="fa-solid fa-user-tie"></i> About Me
             </div>
             <div class="start-items" onclick="openWindow('experience-window'); toggleStartMenu();">
-                <i class="fa-solid fa-briefcase"></i> Experience
+                <i class="fa-solid fa-briefcase"></i> Work Experience
             </div>
-            <div class="start-items" onclick="openWindow('skills-window'); toggleStartMenu();">
-                <i class="fa-solid fa-microchip"></i> Tech Stack
+            <div class="start-items" onclick="openWindow('education-window'); toggleStartMenu();">
+                <i class="fa-solid fa-graduation-cap"></i> Education
             </div>
-            <div class="start-items" onclick="openWindow('terminal-window'); toggleStartMenu();">
-                <i class="fa-solid fa-terminal"></i> Terminal
+            <div class="start-items" onclick="openWindow('competencies-window'); toggleStartMenu();">
+                <i class="fa-solid fa-list-check"></i> Core Competencies
+            </div>
+            <div class="start-items" onclick="openWindow('technical-window'); toggleStartMenu();">
+                <i class="fa-solid fa-microchip"></i> Technical Expertise
+            </div>
+            <div class="start-items" onclick="openWindow('volunteer-window'); toggleStartMenu();">
+                <i class="fa-solid fa-handshake-angle"></i> Volunteer Experience
+            </div>
+            <div class="start-items" onclick="openWindow('certifications-window'); toggleStartMenu();">
+                <i class="fa-solid fa-certificate"></i> Certifications
+            </div>
+            <div class="start-items" onclick="openWindow('honors-window'); toggleStartMenu();">
+                <i class="fa-solid fa-award"></i> Honors and Recognition
+            </div>
+            <div class="start-items" onclick="openWindow('achievements-window'); toggleStartMenu();">
+                <i class="fa-solid fa-star"></i> Career Achievements
             </div>
             <div class="start-items" onclick="openWindow('contact-window'); toggleStartMenu();">
                 <i class="fa-solid fa-address-book"></i> Contact Details
+            </div>
+            <div class="start-items" onclick="openWindow('terminal-window'); toggleStartMenu();">
+                <i class="fa-solid fa-terminal"></i> Terminal
             </div>
         </div>
     </div>
