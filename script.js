@@ -27,10 +27,10 @@ function minimizeWindow(windowId) {
 function maximizeWindow(windowId) {
     const win = document.getElementById(windowId);
     if (win.style.width === '100vw') {
-        win.style.width = '550px';
-        win.style.height = '420px';
-        win.style.top = '100px';
-        win.style.left = '100px';
+        win.style.width = '700px';
+        win.style.height = '520px';
+        win.style.top = '50px';
+        win.style.left = '80px';
     } else {
         win.style.width = '100vw';
         win.style.height = 'calc(100vh - 70px)';
@@ -42,7 +42,10 @@ function maximizeWindow(windowId) {
 function bringToFront(windowId) {
     const windows = document.querySelectorAll('.os-window');
     windows.forEach(w => w.style.zIndex = '10');
-    document.getElementById(windowId).style.zIndex = '100';
+    const target = document.getElementById(windowId);
+    if (target) {
+        target.style.zIndex = '100';
+    }
 }
 
 // Window Dragging Logic
@@ -131,7 +134,9 @@ function handleTerminalCommand(e) {
     }
 }
 
-// No open windows at startup
+// Ensure ONLY About Me window is open on startup
 window.onload = () => {
-    // All windows start closed as requested
+    const windows = document.querySelectorAll('.os-window');
+    windows.forEach(w => w.style.display = 'none');
+    openWindow('about-window');
 };
