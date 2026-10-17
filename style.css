@@ -15,11 +15,9 @@ body, html {
 #desktop {
     width: 100vw;
     height: calc(100vh - 40px);
-    background-image: url('BG.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 800px auto;
-    background-color: #0f172a;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.6) 0%, rgba(7, 11, 20, 0.95) 100%),
+        linear-gradient(135deg, #070b14 0%, #0f172a 50%, #090d16 100%);
     position: relative;
     padding: 20px;
 }
