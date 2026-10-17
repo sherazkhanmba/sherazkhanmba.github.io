@@ -106,16 +106,16 @@ body, html {
     line-height: 1.2;
 }
 
-/* OS Windows */
+/* OS Windows - Tripled spacious default size */
 .os-window {
     position: absolute;
-    width: 700px;
-    height: 520px;
+    width: 950px;
+    height: 700px;
     background: #0f172a;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    display: none; /* Controlled via JS window initialization */
+    display: none;
     flex-direction: column;
     overflow: hidden;
     z-index: 10;
@@ -165,11 +165,11 @@ body, html {
 }
 
 .window-body {
-    padding: 20px;
+    padding: 24px;
     color: #cbd5e1;
     overflow-y: auto;
     flex-grow: 1;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.6;
 }
 
@@ -192,7 +192,7 @@ body, html {
 .window-body hr {
     border: 0;
     border-top: 1px solid #334155;
-    margin: 15px 0;
+    margin: 18px 0;
 }
 
 .window-body a {
@@ -204,56 +204,50 @@ body, html {
     text-decoration: underline;
 }
 
-/* About Window Custom Layout & Image Resizing */
+/* About Window Custom Layout & Clean Icon Links */
 .about-top-container {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     align-items: center;
     margin-bottom: 15px;
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
-    min-width: 120px;
-    max-width: 120px;
+    width: 130px;
+    height: 130px;
+    min-width: 130px;
+    max-width: 130px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center 20%; /* Centers head and prevents hitting the top edge */
     border: 3px solid #38bdf8;
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     flex-shrink: 0;
 }
 
-.action-buttons {
+.action-links {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
     margin-top: 12px;
+    font-size: 14px;
 }
 
-.os-btn {
+.action-links a {
+    color: #38bdf8;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 13px;
+    gap: 6px;
     font-weight: 600;
-    text-decoration: none;
-    color: white;
-    transition: opacity 0.2s;
 }
 
-.os-btn:hover {
-    opacity: 0.9;
-    text-decoration: none;
+.action-links a:hover {
+    text-decoration: underline;
 }
 
-.youtube-btn {
-    background-color: #ef4444;
-}
-
-.resume-btn {
-    background-color: #0284c7;
+.action-links .separator {
+    color: #475569;
 }
 
 /* Terminal Styles */
@@ -376,6 +370,7 @@ body, html {
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center 20%;
     border: 2px solid #38bdf8;
 }
 
