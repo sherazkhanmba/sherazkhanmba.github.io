@@ -9,13 +9,15 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #1e1e2f;
+    background-color: #0f172a;
 }
 
 #desktop {
     width: 100vw;
     height: calc(100vh - 40px);
-    background: url('BG.png') no-repeat center center fixed;
+    background-image: url('BG.png');
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
     position: relative;
     padding: 20px;
@@ -63,23 +65,23 @@ body, html {
 
 /* Desktop Grid Icons */
 #desktop-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     gap: 15px;
-    align-items: flex-start;
+    align-content: flex-start;
     margin-top: 20px;
-    max-height: calc(100vh - 90px);
-    overflow-y: auto;
-    width: 320px;
+    max-height: calc(100vh - 80px);
+    width: auto;
 }
 
 .desktop-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90px;
+    width: 100px;
     cursor: pointer;
-    padding: 10px;
+    padding: 8px;
     border-radius: 6px;
     transition: background 0.2s;
     text-align: center;
@@ -90,10 +92,10 @@ body, html {
 }
 
 .desktop-icon .folder-icon {
-    font-size: 36px;
+    font-size: 34px;
     color: #38bdf8;
     margin-bottom: 5px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
 .desktop-icon span {
@@ -101,18 +103,19 @@ body, html {
     font-size: 12px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.9);
     word-break: break-word;
+    line-height: 1.2;
 }
 
 /* OS Windows */
 .os-window {
     position: absolute;
-    width: 550px;
-    height: 420px;
+    width: 700px;
+    height: 520px;
     background: #0f172a;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    display: none; /* Controlled via JS window initialization */
     flex-direction: column;
     overflow: hidden;
     z-index: 10;
@@ -162,12 +165,12 @@ body, html {
 }
 
 .window-body {
-    padding: 15px;
+    padding: 20px;
     color: #cbd5e1;
     overflow-y: auto;
     flex-grow: 1;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .window-body h2, .window-body h3 {
@@ -189,7 +192,7 @@ body, html {
 .window-body hr {
     border: 0;
     border-top: 1px solid #334155;
-    margin: 12px 0;
+    margin: 15px 0;
 }
 
 .window-body a {
@@ -201,21 +204,24 @@ body, html {
     text-decoration: underline;
 }
 
-/* About Window Custom Layout */
+/* About Window Custom Layout & Image Resizing */
 .about-top-container {
     display: flex;
     gap: 20px;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .profile-pic {
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    max-width: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #38bdf8;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    border: 3px solid #38bdf8;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    flex-shrink: 0;
 }
 
 .action-buttons {
@@ -227,9 +233,9 @@ body, html {
 .os-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 4px;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 6px;
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
@@ -343,7 +349,7 @@ body, html {
     bottom: 45px;
     left: 10px;
     width: 280px;
-    max-height: 450px;
+    max-height: 480px;
     overflow-y: auto;
     background: #1e293b;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -363,6 +369,14 @@ body, html {
     align-items: center;
     gap: 12px;
     margin-bottom: 10px;
+}
+
+.start-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #38bdf8;
 }
 
 .start-items {
