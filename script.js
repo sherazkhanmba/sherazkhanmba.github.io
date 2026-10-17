@@ -4,38 +4,86 @@ setInterval(() => {
     document.getElementById('clock').innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }, 1000);
 
+// Default window positions & offsets for cascading initial open
+let openWindowCount = 0;
+
 function openWindow(windowId) {
     const win = document.getElementById(windowId);
+    if (!win) return;
+
     win.style.display = 'flex';
     win.classList.remove('minimized');
+    
+    // Auto-adjust layout based on screen width
+    const isMobile = window.innerWidth <= 600;
+    const isTablet = window.innerWidth <= 900;
+
+    if (isMobile) {
+        win.style.width = '100vw';
+        win.style.height = 'calc(100vh - 74px)';
+        win.style.top = '32px';
+        win.style.left = '0';
+    } else if (isTablet) {
+        win.style.width = '94vw';
+        win.style.height = 'calc(100vh - 85px)';
+        win.style.top = '36px';
+        win.style.left = '3vw';
+    } else {
+        // Desktop window initial size & cascade positioning if not already custom set
+        if (!win.dataset.positioned) {
+            const offset = (openWindowCount % 6) * 25;
+            win.style.top = (40 + offset) + 'px';
+            win.style.left = Math.min(80 + offset, window.innerWidth - 970) + 'px';
+            win.dataset.positioned = "true";
+            openWindowCount++;
+        }
+    }
+
     bringToFront(windowId);
     updateTaskbar();
 }
 
 function closeWindow(windowId) {
     const win = document.getElementById(windowId);
-    win.style.display = 'none';
-    updateTaskbar();
+    if (win) {
+        win.style.display = 'none';
+        updateTaskbar();
+    }
 }
 
 function minimizeWindow(windowId) {
     const win = document.getElementById(windowId);
-    win.classList.add('minimized');
-    updateTaskbar();
+    if (win) {
+        win.classList.add('minimized');
+        updateTaskbar();
+    }
 }
 
 function maximizeWindow(windowId) {
     const win = document.getElementById(windowId);
-    if (win.style.width === '100vw') {
-        win.style.width = '950px';
-        win.style.height = '700px';
-        win.style.top = '40px';
-        win.style.left = '80px';
+    if (!win) return;
+
+    const isMobile = window.innerWidth <= 600;
+    
+    // On mobile, windows are always full size
+    if (isMobile) return;
+
+    if (win.classList.contains('maximized')) {
+        win.classList.remove('maximized');
+        win.style.width = 'min(920px, 92vw)';
+        win.style.height = 'min(650px, calc(100vh - 90px))';
+        win.style.top = win.dataset.prevTop || '40px';
+        win.style.left = win.dataset.prevLeft || '80px';
+        win.style.borderRadius = '8px';
     } else {
+        win.dataset.prevTop = win.style.top;
+        win.dataset.prevLeft = win.style.left;
+        win.classList.add('maximized');
         win.style.width = '100vw';
-        win.style.height = 'calc(100vh - 70px)';
-        win.style.top = '30px';
+        win.style.height = 'calc(100vh - 72px)';
+        win.style.top = '32px';
         win.style.left = '0';
+        win.style.borderRadius = '0';
     }
 }
 
@@ -48,9 +96,27 @@ function bringToFront(windowId) {
     }
 }
 
-// Window Dragging Logic
+// Support single tap/click on desktop icons for touch/mobile devices
+let lastClickTime = 0;
+function handleIconClick(event, windowId) {
+    const currentTime = new Date().getTime();
+    const timeDiff = currentTime - lastClickTime;
+    
+    // On mobile screens or fast touch taps, open on single tap
+    if (window.innerWidth <= 768 || (timeDiff < 400 && timeDiff > 0)) {
+        openWindow(windowId);
+    }
+    lastClickTime = currentTime;
+}
+
+// Window Dragging Logic (Mouse)
 function dragWindow(e, windowId) {
+    // Disable dragging on mobile devices where window is fullscreen
+    if (window.innerWidth <= 600) return;
+    
     const win = document.getElementById(windowId);
+    if (win.classList.contains('maximized')) return;
+
     bringToFront(windowId);
     let startX = e.clientX;
     let startY = e.clientY;
@@ -60,8 +126,15 @@ function dragWindow(e, windowId) {
         let dy = e.clientY - startY;
         startX = e.clientX;
         startY = e.clientY;
-        win.style.top = (win.offsetTop + dy) + 'px';
-        win.style.left = (win.offsetLeft + dx) + 'px';
+
+        let newTop = win.offsetTop + dy;
+        let newLeft = win.offsetLeft + dx;
+
+        // Keep window within top bar boundaries
+        if (newTop < 32) newTop = 32;
+
+        win.style.top = newTop + 'px';
+        win.style.left = newLeft + 'px';
     }
 
     function onMouseUp() {
@@ -71,6 +144,43 @@ function dragWindow(e, windowId) {
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
+}
+
+// Touch Dragging Logic for Tablets
+function dragWindowTouch(e, windowId) {
+    if (window.innerWidth <= 600) return;
+    
+    const win = document.getElementById(windowId);
+    if (win.classList.contains('maximized')) return;
+
+    bringToFront(windowId);
+    const touch = e.touches[0];
+    let startX = touch.clientX;
+    let startY = touch.clientY;
+
+    function onTouchMove(e) {
+        const touchMove = e.touches[0];
+        let dx = touchMove.clientX - startX;
+        let dy = touchMove.clientY - startY;
+        startX = touchMove.clientX;
+        startY = touchMove.clientY;
+
+        let newTop = win.offsetTop + dy;
+        let newLeft = win.offsetLeft + dx;
+
+        if (newTop < 32) newTop = 32;
+
+        win.style.top = newTop + 'px';
+        win.style.left = newLeft + 'px';
+    }
+
+    function onTouchEnd() {
+        document.removeEventListener('touchmove', onTouchMove);
+        document.removeEventListener('touchend', onTouchEnd);
+    }
+
+    document.addEventListener('touchmove', onTouchMove, { passive: false });
+    document.addEventListener('touchend', onTouchEnd);
 }
 
 function updateTaskbar() {
@@ -89,14 +199,27 @@ function updateTaskbar() {
     });
 }
 
-function toggleStartMenu() {
+function toggleStartMenu(event) {
+    if (event) event.stopPropagation();
     const menu = document.getElementById('start-menu');
     menu.classList.toggle('hidden');
 }
 
+// Close start menu when clicking outside
+document.addEventListener('click', (e) => {
+    const menu = document.getElementById('start-menu');
+    const startBtn = document.querySelector('.taskbar-start');
+    if (menu && !menu.classList.contains('hidden')) {
+        if (!menu.contains(e.target) && !startBtn.contains(e.target)) {
+            menu.classList.add('hidden');
+        }
+    }
+});
+
 // Terminal Logic
 function focusTerminalInput() {
-    document.getElementById('terminal-input').focus();
+    const input = document.getElementById('terminal-input');
+    if (input) input.focus();
 }
 
 function handleTerminalCommand(e) {
@@ -133,6 +256,21 @@ function handleTerminalCommand(e) {
         body.scrollTop = body.scrollHeight;
     }
 }
+
+// Window resize handler for dynamic viewport updates
+window.addEventListener('resize', () => {
+    const activeWindows = document.querySelectorAll('.os-window');
+    activeWindows.forEach(win => {
+        if (win.style.display === 'flex') {
+            if (window.innerWidth <= 600) {
+                win.style.width = '100vw';
+                win.style.height = 'calc(100vh - 74px)';
+                win.style.top = '32px';
+                win.style.left = '0';
+            }
+        }
+    });
+});
 
 // Ensure ONLY About Me window is open on startup
 window.onload = () => {
