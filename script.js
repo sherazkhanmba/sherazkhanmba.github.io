@@ -27,9 +27,9 @@ function minimizeWindow(windowId) {
 function maximizeWindow(windowId) {
     const win = document.getElementById(windowId);
     if (win.style.width === '100vw') {
-        win.style.width = '700px';
-        win.style.height = '520px';
-        win.style.top = '50px';
+        win.style.width = '950px';
+        win.style.height = '700px';
+        win.style.top = '40px';
         win.style.left = '80px';
     } else {
         win.style.width = '100vw';
