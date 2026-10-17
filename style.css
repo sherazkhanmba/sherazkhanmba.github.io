@@ -15,7 +15,8 @@ body, html {
 #desktop {
     width: 100vw;
     height: calc(100vh - 40px);
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    background: url('BG.png') no-repeat center center fixed;
+    background-size: cover;
     position: relative;
     padding: 20px;
 }
@@ -62,11 +63,14 @@ body, html {
 
 /* Desktop Grid Icons */
 #desktop-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 15px;
     align-items: flex-start;
     margin-top: 20px;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    width: 320px;
 }
 
 .desktop-icon {
@@ -82,40 +86,40 @@ body, html {
 }
 
 .desktop-icon:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .desktop-icon .folder-icon {
     font-size: 36px;
     color: #38bdf8;
     margin-bottom: 5px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .desktop-icon span {
     color: #f8fafc;
     font-size: 12px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-    word-break: break-all;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+    word-break: break-word;
 }
 
 /* OS Windows */
 .os-window {
     position: absolute;
-    width: 500px;
-    height: 380px;
+    width: 550px;
+    height: 420px;
     background: #0f172a;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    display: flex;
+    display: none;
     flex-direction: column;
     overflow: hidden;
     z-index: 10;
 }
 
 .os-window.minimized {
-    display: none;
+    display: none !important;
 }
 
 .window-header {
@@ -195,6 +199,55 @@ body, html {
 
 .window-body a:hover {
     text-decoration: underline;
+}
+
+/* About Window Custom Layout */
+.about-top-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #38bdf8;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.os-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.os-btn:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+.youtube-btn {
+    background-color: #ef4444;
+}
+
+.resume-btn {
+    background-color: #0284c7;
 }
 
 /* Terminal Styles */
@@ -290,6 +343,8 @@ body, html {
     bottom: 45px;
     left: 10px;
     width: 280px;
+    max-height: 450px;
+    overflow-y: auto;
     background: #1e293b;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
