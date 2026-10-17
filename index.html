@@ -26,55 +26,55 @@
 
         <!-- Desktop Grid Icons -->
         <div id="desktop-grid">
-            <div class="desktop-icon" ondblclick="openWindow('about-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'about-window')" ondblclick="openWindow('about-window')">
                 <i class="fa-solid fa-user-tie folder-icon"></i>
                 <span>About Me</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('experience-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'experience-window')" ondblclick="openWindow('experience-window')">
                 <i class="fa-solid fa-briefcase folder-icon"></i>
                 <span>Work Experience</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('education-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'education-window')" ondblclick="openWindow('education-window')">
                 <i class="fa-solid fa-graduation-cap folder-icon"></i>
                 <span>Education</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('competencies-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'competencies-window')" ondblclick="openWindow('competencies-window')">
                 <i class="fa-solid fa-list-check folder-icon"></i>
                 <span>Core Competencies</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('technical-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'technical-window')" ondblclick="openWindow('technical-window')">
                 <i class="fa-solid fa-microchip folder-icon"></i>
                 <span>Technical Expertise</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('volunteer-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'volunteer-window')" ondblclick="openWindow('volunteer-window')">
                 <i class="fa-solid fa-handshake-angle folder-icon"></i>
                 <span>Volunteer Experience</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('certifications-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'certifications-window')" ondblclick="openWindow('certifications-window')">
                 <i class="fa-solid fa-certificate folder-icon"></i>
                 <span>Certifications</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('honors-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'honors-window')" ondblclick="openWindow('honors-window')">
                 <i class="fa-solid fa-award folder-icon"></i>
                 <span>Honors and Recognition</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('achievements-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'achievements-window')" ondblclick="openWindow('achievements-window')">
                 <i class="fa-solid fa-star folder-icon"></i>
                 <span>Career Achievements</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('contact-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'contact-window')" ondblclick="openWindow('contact-window')">
                 <i class="fa-solid fa-address-book folder-icon"></i>
                 <span>Contact Details</span>
             </div>
-            <div class="desktop-icon" ondblclick="openWindow('terminal-window')">
+            <div class="desktop-icon" onclick="handleIconClick(event, 'terminal-window')" ondblclick="openWindow('terminal-window')">
                 <i class="fa-solid fa-terminal folder-icon"></i>
                 <span>Terminal</span>
             </div>
         </div>
 
         <!-- WINDOW: About Me -->
-        <div class="os-window" id="about-window" style="top: 40px; left: 80px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'about-window')">
+        <div class="os-window" id="about-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'about-window')" ontouchstart="dragWindowTouch(event, 'about-window')">
                 <span class="window-title"><i class="fa-solid fa-user-tie"></i> About Me</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('about-window')">_</span>
@@ -110,8 +110,8 @@
         </div>
 
         <!-- WINDOW: Work Experience -->
-        <div class="os-window" id="experience-window" style="top: 60px; left: 120px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'experience-window')">
+        <div class="os-window" id="experience-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'experience-window')" ontouchstart="dragWindowTouch(event, 'experience-window')">
                 <span class="window-title"><i class="fa-solid fa-briefcase"></i> Work Experience</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('experience-window')">_</span>
@@ -180,8 +180,8 @@
         </div>
 
         <!-- WINDOW: Education -->
-        <div class="os-window" id="education-window" style="top: 80px; left: 160px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'education-window')">
+        <div class="os-window" id="education-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'education-window')" ontouchstart="dragWindowTouch(event, 'education-window')">
                 <span class="window-title"><i class="fa-solid fa-graduation-cap"></i> Education</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('education-window')">_</span>
@@ -199,8 +199,8 @@
         </div>
 
         <!-- WINDOW: Core Competencies -->
-        <div class="os-window" id="competencies-window" style="top: 100px; left: 200px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'competencies-window')">
+        <div class="os-window" id="competencies-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'competencies-window')" ontouchstart="dragWindowTouch(event, 'competencies-window')">
                 <span class="window-title"><i class="fa-solid fa-list-check"></i> Core Competencies</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('competencies-window')">_</span>
@@ -214,8 +214,8 @@
         </div>
 
         <!-- WINDOW: Technical Expertise -->
-        <div class="os-window" id="technical-window" style="top: 120px; left: 240px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'technical-window')">
+        <div class="os-window" id="technical-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'technical-window')" ontouchstart="dragWindowTouch(event, 'technical-window')">
                 <span class="window-title"><i class="fa-solid fa-microchip"></i> Technical Expertise</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('technical-window')">_</span>
@@ -248,8 +248,8 @@
         </div>
 
         <!-- WINDOW: Volunteer Experience -->
-        <div class="os-window" id="volunteer-window" style="top: 140px; left: 280px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'volunteer-window')">
+        <div class="os-window" id="volunteer-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'volunteer-window')" ontouchstart="dragWindowTouch(event, 'volunteer-window')">
                 <span class="window-title"><i class="fa-solid fa-handshake-angle"></i> Volunteer Experience</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('volunteer-window')">_</span>
@@ -271,8 +271,8 @@
         </div>
 
         <!-- WINDOW: Certifications -->
-        <div class="os-window" id="certifications-window" style="top: 160px; left: 320px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'certifications-window')">
+        <div class="os-window" id="certifications-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'certifications-window')" ontouchstart="dragWindowTouch(event, 'certifications-window')">
                 <span class="window-title"><i class="fa-solid fa-certificate"></i> Certifications</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('certifications-window')">_</span>
@@ -293,8 +293,8 @@
         </div>
 
         <!-- WINDOW: Honors and Recognition -->
-        <div class="os-window" id="honors-window" style="top: 180px; left: 360px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'honors-window')">
+        <div class="os-window" id="honors-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'honors-window')" ontouchstart="dragWindowTouch(event, 'honors-window')">
                 <span class="window-title"><i class="fa-solid fa-award"></i> Honors and Recognition</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('honors-window')">_</span>
@@ -312,8 +312,8 @@
         </div>
 
         <!-- WINDOW: Career Achievements -->
-        <div class="os-window" id="achievements-window" style="top: 200px; left: 400px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'achievements-window')">
+        <div class="os-window" id="achievements-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'achievements-window')" ontouchstart="dragWindowTouch(event, 'achievements-window')">
                 <span class="window-title"><i class="fa-solid fa-star"></i> Career Achievements</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('achievements-window')">_</span>
@@ -333,8 +333,8 @@
         </div>
 
         <!-- WINDOW: Terminal -->
-        <div class="os-window" id="terminal-window" style="top: 220px; left: 440px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'terminal-window')">
+        <div class="os-window" id="terminal-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'terminal-window')" ontouchstart="dragWindowTouch(event, 'terminal-window')">
                 <span class="window-title"><i class="fa-solid fa-terminal"></i> Terminal</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('terminal-window')">_</span>
@@ -355,8 +355,8 @@
         </div>
 
         <!-- WINDOW: Contact Details -->
-        <div class="os-window" id="contact-window" style="top: 240px; left: 480px;">
-            <div class="window-header" onmousedown="dragWindow(event, 'contact-window')">
+        <div class="os-window" id="contact-window">
+            <div class="window-header" onmousedown="dragWindow(event, 'contact-window')" ontouchstart="dragWindowTouch(event, 'contact-window')">
                 <span class="window-title"><i class="fa-solid fa-address-book"></i> Contact Details</span>
                 <div class="window-controls">
                     <span class="minimize" onclick="minimizeWindow('contact-window')">_</span>
@@ -378,8 +378,8 @@
 
         <!-- Bottom Taskbar -->
         <div id="taskbar">
-            <div class="taskbar-start" onclick="toggleStartMenu()">
-                <i class="fa-solid fa-bars"></i> Start
+            <div class="taskbar-start" onclick="toggleStartMenu(event)">
+                <i class="fa-solid fa-bars"></i> <span>Start</span>
             </div>
             <div class="taskbar-apps" id="taskbar-apps">
                 <!-- Active window chips appear here dynamically -->
