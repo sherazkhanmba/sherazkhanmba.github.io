@@ -4,8 +4,6 @@ setInterval(() => {
     document.getElementById('clock').innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }, 1000);
 
-let activeWindows = {};
-
 function openWindow(windowId) {
     const win = document.getElementById(windowId);
     win.style.display = 'flex';
@@ -29,8 +27,8 @@ function minimizeWindow(windowId) {
 function maximizeWindow(windowId) {
     const win = document.getElementById(windowId);
     if (win.style.width === '100vw') {
-        win.style.width = '500px';
-        win.style.height = '380px';
+        win.style.width = '550px';
+        win.style.height = '420px';
         win.style.top = '100px';
         win.style.left = '100px';
     } else {
@@ -133,7 +131,7 @@ function handleTerminalCommand(e) {
     }
 }
 
-// Initialize default open window
+// No open windows at startup
 window.onload = () => {
-    openWindow('about-window');
+    // All windows start closed as requested
 };
