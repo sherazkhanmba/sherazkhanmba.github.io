@@ -16,7 +16,6 @@ body, html {
 #desktop {
     width: 100vw;
     height: 100vh;
-    background-image: url('BG.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
