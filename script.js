@@ -240,11 +240,11 @@ function handleTerminalCommand(e) {
         } else if (cmd === 'about') {
             output.innerHTML += `Sheraz Khan: IT Manager, Cybersecurity Specialist & Automation Expert with 15+ years experience.<br><br>`;
         } else if (cmd === 'experience') {
-            output.innerHTML += `1. IT Manager | Drake Lighting (2022-2026)<br>2. IT Systems Manager | Native Grill & Wings (2019-2022)<br>3. IT Systems Manager | TravelCenters of America (2012-2019)<br><br>`;
+            output.innerHTML += `1. IT Manager | Drake Lighting (2022-2026)<br>2. IT Systems Manager | Native Grill & Wings (2019-2022)<br>3. IT Systems Manager | TravelCenters of America (2012-2019)<br>4. IT Systems Specialist | Rosewood Sandhill (2009-2012)<br><br>`;
         } else if (cmd === 'skills') {
             output.innerHTML += `Azure, M365, Entra ID, Power Platform, Dynamics 365, Cybersecurity, Zero Trust, Python, C#, SQL.<br><br>`;
         } else if (cmd === 'contact') {
-            output.innerHTML += `Email: sherazkhanonline@outlook.com | Phone: (217) 904-2042 | Web: sherazkhanonline.com<br><br>`;
+            output.innerHTML += `Email: sherazkhanonline@outlook.com | Phone: +1 (217) 904-2042 / +92 (300) 1788834 | Web: sherazkhanonline.com<br><br>`;
         } else if (cmd === 'clear') {
             output.innerHTML = `Welcome to SherazOS v10.4<br>Type <span class="highlight">help</span> for commands.<br><br>`;
         } else if (cmd !== '') {
